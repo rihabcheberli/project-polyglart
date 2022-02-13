@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {RegisterComponent} from './register/register.component';
 import {NotFoundComponent} from './not-found/not-found.component';
@@ -7,22 +7,22 @@ import {AboutComponent} from './about/about.component';
 import {ContactComponent} from './contact/contact.component';
 import {ExpoSitesComponent} from './expo-sites/expo-sites.component';
 import {SignInComponent} from './sign-in/sign-in.component';
-import {AuthGuard} from './services/auth.guard';
 
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  {path: '', component: HomeComponent},
   // , canActivate: [AuthGuard]
-  { path: 'about', component: AboutComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: 'expos', component: ExpoSitesComponent },
-  { path: 'login', component: SignInComponent },
-  { path: '**', component: NotFoundComponent},
+  {path: 'about', component: AboutComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'contact', component: ContactComponent},
+  {path: 'expos', component: ExpoSitesComponent},
+  {path: 'login', component: SignInComponent},
+  {path: '**', component: NotFoundComponent},
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

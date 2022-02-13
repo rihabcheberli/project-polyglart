@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { Expo } from '../../shared/expo';
+import {Expo} from '../../shared/expo';
 
 @Component({
   selector: 'app-expo-site',
@@ -11,7 +11,8 @@ export class ExpoSiteComponent implements OnInit {
   @Input()
   expo: Expo;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }

@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { FirstElementComponent } from './first-element.component';
+import {FirstElementComponent} from './first-element.component';
 
 describe('FirstElementComponent', () => {
   let component: FirstElementComponent;
@@ -8,7 +8,7 @@ describe('FirstElementComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FirstElementComponent ]
+      declarations: [FirstElementComponent]
     })
       .compileComponents();
   }));

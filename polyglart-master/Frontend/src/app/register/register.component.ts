@@ -1,13 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { first } from 'rxjs/operators';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {first} from 'rxjs/operators';
 
-import { AlertService } from '../services/alert.service';
-import { UserService} from '../services/user.service';
-import { AuthService} from '../services/auth.service';
+import {AlertService} from '../services/alert.service';
+import {UserService} from '../services/user.service';
+import {AuthService} from '../services/auth.service';
 
-@Component({ templateUrl: 'register.component.html' })
+@Component({templateUrl: 'register.component.html'})
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   loading = false;
@@ -37,7 +37,9 @@ export class RegisterComponent implements OnInit {
   }
 
   // convenience getter for easy access to form fields
-  get f() { return this.registerForm.controls; }
+  get f() {
+    return this.registerForm.controls;
+  }
 
   onSubmit() {
     this.submitted = true;

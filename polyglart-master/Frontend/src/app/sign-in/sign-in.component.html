@@ -1,7 +1,8 @@
 <!-- Page Title -->
 <div class="hun-section-page-title layout-1 hide-breadcrumbs no-parallax">
   <div class="inner-section">
-    <div class="bg-img parallax100"><span class="inner-parallax" style="background-image: url(../../assets/images/bg-01.jpg);"></span></div>
+    <div class="bg-img parallax100"><span class="inner-parallax"
+                                          style="background-image: url(../../assets/images/bg-01.jpg);"></span></div>
 
     <div class="container">
       <h2 class="main-title">
@@ -52,7 +53,8 @@
             <form novalidate [formGroup]="loginForm" (ngSubmit)="onSubmit()">
               <label>
                 <span class="name-field">Email</span>
-                <input type="text" placeholder="info@example.com" formControlName="username" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f.username.errors }"  required>
+                <input type="text" placeholder="info@example.com" formControlName="username" class="form-control"
+                       [ngClass]="{ 'is-invalid': submitted && f.username.errors }" required>
               </label>
               <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                 <div *ngIf="f.username.errors.required">Username is required</div>
@@ -60,7 +62,8 @@
 
               <label>
                 <span class="name-field ">Password</span>
-                <input type="password" placeholder="**********" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required >
+                <input type="password" placeholder="**********" formControlName="password" class="form-control"
+                       [ngClass]="{ 'is-invalid': submitted && f.password.errors }" required>
               </label>
               <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                 <div *ngIf="f.password.errors.required">Password is required</div>

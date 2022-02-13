@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { DynamicscriptloaderService } from './dynamicscriptloader.service';
+import {DynamicscriptloaderService} from './dynamicscriptloader.service';
 
 describe('DynamicscriptloaderService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

@@ -1,11 +1,12 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 
 interface Scripts {
   name: string;
   src: string;
 }
+
 export const ScriptStore: Scripts[] = [
-  { name: 'main', src: '../../assets/js/main.js' }
+  {name: 'main', src: '../../assets/js/main.js'}
 ];
 
 declare var document: any;
@@ -56,7 +57,7 @@ export class DynamicscriptloaderService {
         script.onerror = (error: any) => resolve({script: name, loaded: false, status: 'Loaded'});
         document.getElementsByTagName('head')[0].appendChild(script);
       } else {
-        resolve({ script: name, loaded: true, status: 'Already Loaded' });
+        resolve({script: name, loaded: true, status: 'Already Loaded'});
       }
     });
   }

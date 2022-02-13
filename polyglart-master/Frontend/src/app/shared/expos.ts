@@ -1,4 +1,4 @@
-import { Expo } from './expo';
+import {Expo} from './expo';
 
 export const expos: Expo[] = [
   {

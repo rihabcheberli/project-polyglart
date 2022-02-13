@@ -33,7 +33,7 @@ module.exports = {
       // workaround for warning: System.import() is deprecated and will be removed soon. Use import() instead.
       {
         test: /[\/\\]@angular[\/\\].+\.js$/,
-        parser: { system: true }
+        parser: {system: true}
       },
       {
         test: /\.(png|jpe?g|gif)$/i,
@@ -46,7 +46,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({ template: './src/index.html' }),
+    new HtmlWebpackPlugin({template: './src/index.html'}),
     new webpack.DefinePlugin({
       // global app config object
       config: JSON.stringify({
