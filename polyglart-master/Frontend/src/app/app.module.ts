@@ -29,11 +29,8 @@ import {JwtInterceptor} from './services/jwt.interceptor';
 import {ErrorInterceptor} from './services/error.interceptor';
 import {fakeBackendProvider} from './services/fake-backend';
 import { ExpoFormComponent } from './expo-sites/expo-form/expo-form.component';
-
 import { baseURL } from './shared/baseurl';
 import {ProcessHTTPMsgService} from './services/process-httpmsg.service';
-import { SigninComponent } from './sign-in/sign-in.component';
-
 
 @NgModule({
   declarations: [
@@ -53,7 +50,6 @@ import { SigninComponent } from './sign-in/sign-in.component';
     ExpoSiteComponent,
     AlertComponent,
     ExpoFormComponent,
-    SigninComponent
   ],
   imports: [
     BrowserModule,
