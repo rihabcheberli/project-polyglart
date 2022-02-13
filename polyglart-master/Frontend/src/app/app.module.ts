@@ -32,6 +32,7 @@ import { ExpoFormComponent } from './expo-sites/expo-form/expo-form.component';
 
 import { baseURL } from './shared/baseurl';
 import {ProcessHTTPMsgService} from './services/process-httpmsg.service';
+import { SigninComponent } from './sign-in/sign-in.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import {ProcessHTTPMsgService} from './services/process-httpmsg.service';
     SignInComponent,
     ExpoSiteComponent,
     AlertComponent,
-    ExpoFormComponent
+    ExpoFormComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
