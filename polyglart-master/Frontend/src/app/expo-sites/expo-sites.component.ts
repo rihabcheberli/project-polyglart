@@ -1,7 +1,7 @@
 import {Component, Inject, Input, OnInit} from '@angular/core';
-import { expoS } from "../shared/expos";
-import { expo } from "../shared/expo";
-import {expoService} from "../services/expo.service";
+import { expoS } from '../shared/expos';
+import { expo } from '../shared/expo';
+import {expoService} from '../services/expo.service';
 
 @Component({
   selector: 'app-expo-sites',
@@ -17,11 +17,11 @@ export class expoSitesComponent implements OnInit {
 
   ngOnInit() {
     this.expoService.getexpos()
-      .subscribe((expos)=> this.expos = expos,
-          errmess => this.errMess = <any>errmess);
+      .subscribe((expos) => this.expos = expos,
+          errmess => this.errMess = errmess as any);
   }
 
-  set exposValue ( expo: expo) {
+  set exposValue( expo: expo) {
     this.expos.push(expo);
   }
 

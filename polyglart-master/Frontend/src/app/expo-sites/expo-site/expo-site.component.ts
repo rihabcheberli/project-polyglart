@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { expo } from "../../shared/expo";
+import { expo } from '../../shared/expo';
 
 @Component({
   selector: 'app-expo-site',

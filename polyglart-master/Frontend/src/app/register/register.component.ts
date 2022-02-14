@@ -3,9 +3,9 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-import { AlertService } from "../services/alert.service";
-import { UserService} from "../services/user.service";
-import { AuthService} from "../services/auth.service";
+import { AlertService } from '../services/alert.service';
+import { UserService} from '../services/user.service';
+import { AuthService} from '../services/auth.service';
 
 @Component({ templateUrl: 'register.component.html' })
 export class RegisterComponent implements OnInit {
