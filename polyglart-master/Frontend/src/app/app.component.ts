@@ -1,7 +1,7 @@
-import {Component} from '@angular/core';
-import {Router} from '@angular/router';
-import {AuthService} from './services/auth.service';
-import {User} from './shared/user';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService} from './services/auth.service';
+import { User} from './shared/user';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +9,8 @@ import {User} from './shared/user';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'polyglArt';
+  title = 'expoIT';
   currentUser: User;
-
   constructor(
     private router: Router,
     private authenticationService: AuthService

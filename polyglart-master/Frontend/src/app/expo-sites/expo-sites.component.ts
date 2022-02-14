@@ -1,28 +1,27 @@
-import {Component, OnInit} from '@angular/core';
-import {expos} from '../shared/expos';
-import {Expo} from '../shared/expo';
-import {ExpoService} from '../services/expo.service';
+import {Component, Inject, Input, OnInit} from '@angular/core';
+import { expoS } from "../shared/expos";
+import { expo } from "../shared/expo";
+import {expoService} from "../services/expo.service";
 
 @Component({
   selector: 'app-expo-sites',
   templateUrl: './expo-sites.component.html',
   styleUrls: ['./expo-sites.component.css']
 })
-export class ExpoSitesComponent implements OnInit {
-  public expos: Expo[];
+export class expoSitesComponent implements OnInit {
+  public expos: expo[];
   errMess: string;
 
 
-  constructor(private expoService: ExpoService) {
-  }
+  constructor(private expoService: expoService) { }
 
   ngOnInit() {
     this.expoService.getexpos()
-      .subscribe(() => this.expos = expos,
-        err => this.errMess = err as any);
+      .subscribe((expos)=> this.expos = expos,
+          errmess => this.errMess = <any>errmess);
   }
 
-  set exposValue(expo: Expo) {
+  set exposValue ( expo: expo) {
     this.expos.push(expo);
   }
 

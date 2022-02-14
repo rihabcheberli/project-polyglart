@@ -1,12 +1,11 @@
 <!-- Page Title -->
 <div class="hun-section-page-title layout-1 hide-breadcrumbs no-parallax">
   <div class="inner-section">
-    <div class="bg-img parallax100"><span class="inner-parallax"
-                                          style="background-image: url(../../assets/images/bg-01.jpg);"></span></div>
+    <div class="bg-img parallax100"><span class="inner-parallax" style="background-image: url(../../assets/images/bg-01.jpg);"></span></div>
 
     <div class="container">
       <h2 class="main-title">
-        Sign up
+        Register
       </h2>
 
       <ul class="breadcrumbs">
@@ -34,7 +33,8 @@
         <div class="col-md-10 pb-0">
           <div class="hun-element-heading--type-1 align-center m-b-75">
             <h3 class="title">
-              Become a member and visit our exhibitions.
+              Take the chance to live the adventure
+
             </h3>
 
           </div>
@@ -44,7 +44,7 @@
       <div class="row justify-content-center">
         <div class="col-6 col-img d-none d-lg-block">
           <div class="img-sec">
-            <img src="../../assets/images/sign-up.png" alt="IMG">
+            <img src="../../assets/images/png-05.png" alt="IMG">
           </div>
         </div>
 
@@ -52,66 +52,61 @@
           <div class="hun-element-form--type-1">
             <form novalidate [formGroup]="registerForm" (ngSubmit)="onSubmit()">
               <label>
-                <span class="name-field">First name</span>
-                <input type="text" formControlName="firstName" class="form-control"
-                       [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }"/>
+									<span class="name-field">Your first Name</span>
+                <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
               </label>
               <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                 <div *ngIf="f.firstName.errors.required">First Name is required</div>
               </div>
 
               <label>
-                <span class="name-field">Last name</span>
-                <input type="text" formControlName="lastName" class="form-control"
-                       [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }"/>
+                  <span class="name-field">Your Last Name</span>
+                <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
               </label>
               <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                 <div *ngIf="f.lastName.errors.required">Last Name is required</div>
               </div>
 
               <label>
-                <span class="name-field">Username </span>
-                <input type="text" formControlName="username" class="form-control"
-                       [ngClass]="{ 'is-invalid': submitted && f.username.errors }"/>
+									<span class="name-field">	Username </span>
+                <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
               </label>
               <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
                 <div *ngIf="f.username.errors.required">Username is required</div>
               </div>
 
               <label>
-                <span class="name-field">Email</span>
-                <input type="text" formControlName="email" class="form-control"
-                       [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+									<span class="name-field">Your Email</span>
+                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
               </label>
               <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                 <div *ngIf="f.email.errors.required">Email is required</div>
               </div>
 
               <label>
-                <span class="name-field">Password</span>
-                <input type="password" formControlName="password" class="form-control"
-                       [ngClass]="{ 'is-invalid': submitted && f.password.errors }"/>
+									<span class="name-field">Your Password</span>
+                <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
               </label>
               <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                 <div *ngIf="f.password.errors.required">Password is required</div>
                 <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
               </div>
-              <!--              <label>-->
-              <!--									<span class="name-field">-->
-              <!--										select an Options-->
-              <!--									</span>-->
-              <!--                <span class="wrap-select">-->
-              <!--										<select formControlName="role">-->
-              <!--											<option>expoer</option>-->
-              <!--											<option>exhibitions organiser</option>-->
-              <!--										</select>-->
-              <!--									</span>-->
-              <!--              </label>-->
+<!--              <label>-->
+<!--									<span class="name-field">-->
+<!--										select an Options-->
+<!--									</span>-->
+<!--                <span class="wrap-select">-->
+<!--										<select formControlName="role">-->
+<!--											<option>expoer</option>-->
+<!--											<option>exhibitions organiser</option>-->
+<!--										</select>-->
+<!--									</span>-->
+<!--              </label>-->
 
               <label>
- <span class="name-field">
-                         Do you have an account already ? <a routerLink="/login">Login</a>
-                                                                                        </span>
+									<span class="name-field">
+										Do you have an account already ? <a routerLink="/login">Login</a>
+									</span>
 
               </label>
 
@@ -130,4 +125,3 @@
   </div>
 </div>
 <!-- end Form -->
-

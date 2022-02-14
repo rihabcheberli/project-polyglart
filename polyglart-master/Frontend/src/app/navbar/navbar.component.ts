@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {first} from 'rxjs/operators';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import { first } from 'rxjs/operators';
 
-import {User} from '../shared/user';
-import {DynamicscriptloaderService} from '../services/dynamicscriptloader.service';
+import { User} from '../shared/user';
+import { DynamicscriptloaderService } from '../services/dynamicscriptloader.service';
 import {AuthService} from '../services/auth.service';
-import {UserService} from '../services/user.service';
+import { UserService} from '../services/user.service';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -14,6 +15,7 @@ import {UserService} from '../services/user.service';
 export class NavbarComponent implements OnInit {
   currentUser: User;
   users = [];
+
 
 
   constructor(

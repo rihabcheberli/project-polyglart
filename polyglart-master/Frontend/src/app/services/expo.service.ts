@@ -1,28 +1,27 @@
-import {Injectable} from '@angular/core';
-import {catchError, map} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { map , catchError} from 'rxjs/operators';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {baseURL} from '../shared/baseurl';
-import {Observable} from 'rxjs';
-import {Expo} from '../shared/expo';
-import {ProcessHTTPMsgService} from './process-httpmsg.service';
+import { baseURL } from '../shared/baseurl';
+import {Observable} from "rxjs";
+import {expo} from "../shared/expo";
+import { ProcessHTTPMsgService } from './process-httpmsg.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ExpoService {
+export class expoService {
 
   constructor(private http: HttpClient,
-              private processHTTPMsgService: ProcessHTTPMsgService) {
-  }
+              private processHTTPMsgService: ProcessHTTPMsgService) { }
 
-  getexpos(): Observable<Expo[]> {
-    return this.http.get<Expo[]>(baseURL + 'expos')
+  getexpos(): Observable<expo[]> {
+    return this.http.get<expo[]>(baseURL + 'expos')
       .pipe(catchError(this.processHTTPMsgService.handleError));
 
   }
 
-  getexpo(id: string): Observable<Expo> {
-    return this.http.get<Expo>(baseURL + 'expos/' + id)
+  getexpo(id: string): Observable<expo> {
+    return this.http.get<expo>(baseURL + 'expos/' + id)
       .pipe(catchError(this.processHTTPMsgService.handleError));
 
   }
@@ -33,13 +32,13 @@ export class ExpoService {
 
   }
 
-  putexpo(expo: Expo): Observable<Expo> {
+  putexpo(expo: expo): Observable<expo> {
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type': 'application/json'
+        'Content-Type':  'application/json'
       })
     };
-    return this.http.post<Expo>(baseURL + 'expos/', expo, httpOptions)
+    return this.http.post<expo>(baseURL + 'expos/' , expo, httpOptions)
       .pipe(catchError(this.processHTTPMsgService.handleError));
 
   }

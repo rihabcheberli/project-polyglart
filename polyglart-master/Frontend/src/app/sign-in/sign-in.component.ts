@@ -1,10 +1,10 @@
-import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {first} from 'rxjs/operators';
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
 
-import {AuthService} from '../services/auth.service';
-import {AlertService,} from '../services/alert.service';
+import { AuthService } from '../services/auth.service';
+import { AlertService,  } from '../services/alert.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -41,9 +41,7 @@ export class SignInComponent implements OnInit {
   }
 
   // convenience getter for easy access to form fields
-  get f() {
-    return this.loginForm.controls;
-  }
+  get f() { return this.loginForm.controls; }
 
   onSubmit() {
     this.submitted = true;
@@ -69,4 +67,3 @@ export class SignInComponent implements OnInit {
         });
   }
 }
-

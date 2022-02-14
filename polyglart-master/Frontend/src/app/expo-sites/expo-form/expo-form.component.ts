@@ -1,50 +1,55 @@
-import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {Expo} from '../../shared/expo';
-import {ActivatedRoute} from '@angular/router';
-import {ExpoService} from '../../services/expo.service';
+import {Component, Inject, Input, OnInit, ViewChild} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import { expo} from "../../shared/expo";
+import { expoS} from "../../shared/expos";
+import {ActivatedRoute, Params} from "@angular/router";
+import {expoService} from "../../services/expo.service";
+import {baseURL} from "../../shared/baseurl";
+import {switchMap} from "rxjs/internal/operators/switchMap";
+import {expoSitesComponent} from "../expo-sites.component";
 
 @Component({
   selector: 'app-expo-form',
   templateUrl: './expo-form.component.html',
   styleUrls: ['./expo-form.component.css']
 })
-export class ExpoFormComponent implements OnInit {
+export class expoFormComponent implements OnInit {
   expoForm: FormGroup;
-  expo: Expo;
-  expoCopy: Expo;
+  expo: expo;
+  expoCopy: expo;
   errMess: string;
-  expoIds: string[];
+  expoIds : string[];
   prev: string;
   next: string;
-  @Input()
-  public expos;
-  @ViewChild('expoform', {static: true}) expoFormDirective;
+  @Input('expos') public expos;
+
+  @ViewChild('expoform', { static: true }) expoFormDirective;
 
   formErrors = {
-    name: '',
-    desc: '',
-    date: '',
+    'name': '',
+    'desc': '',
+    'date': '',
   };
 
   validationMessages = {
-    name: {
-      required: 'Name is required.',
-      minlength: 'Name must be at least 2 characters long.',
-      maxlength: 'Name cannot be more than 50 characters long.'
+    'name': {
+      'required':      'Name is required.',
+      'minlength':     'Name must be at least 2 characters long.',
+      'maxlength':     'Name cannot be more than 50 characters long.'
     },
-    desc: {
-      required: 'Description is required.',
+    'desc': {
+      'required':      'Description is required.',
     },
-    date: {
-      required: 'Date is required.',
+    'date': {
+      'required':      'Date is required.',
     },
   };
 
   constructor(
-    private expoService: ExpoService,
-    private route: ActivatedRoute,
-    private fb: FormBuilder,
+      private expoService: expoService,
+      private route: ActivatedRoute,
+      private fb: FormBuilder,
+
   ) {
     this.createForm();
   }
@@ -54,11 +59,11 @@ export class ExpoFormComponent implements OnInit {
       .subscribe((expoId) => this.expoIds = expoId);
   }
 
-  createForm(): void {
+  createForm() : void {
     this.expoForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)]],
-      desc: ['', Validators.required],
-      date: ['', Validators.required],
+      name: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(50)] ],
+      desc: ['', Validators.required ],
+      date: ['', Validators.required ],
     });
 
     this.expoForm.valueChanges
@@ -80,9 +85,7 @@ export class ExpoFormComponent implements OnInit {
   }
 
   onValueChanged(data?: any) {
-    if (!this.expoForm) {
-      return;
-    }
+    if (!this.expoForm) { return; }
     const form = this.expoForm;
     for (const field in this.formErrors) {
       if (this.formErrors.hasOwnProperty(field)) {
@@ -105,19 +108,15 @@ export class ExpoFormComponent implements OnInit {
     console.log(this.expoIds);
     this.expo = this.expoForm.value;
     this.expoCopy = this.expoForm.value;
-    this.expoCopy.id = this.expoIds.length.toString();
+    this.expoCopy.id = this.expoIds.length.toString() ;
     this.expos.push(this.expoCopy);
     this.expoService.putexpo(this.expoCopy)
-      // tslint:disable-next-line:no-shadowed-variable
-      .subscribe((Expo) => {
-          console.log(Expo);
-          this.expo = Expo;
-          this.expoCopy = Expo;
+      .subscribe(expo => {
+          console.log(expo);
+          this.expo = expo;
+          this.expoCopy= expo;
         },
-        errmess => {
-          this.expo = null;
-          this.errMess = errmess as any;
-        });
+        errmess => { this.expo = null;  this.errMess = <any>errmess; });
     console.log(this.expo);
     this.expoForm.reset({
       name: '',

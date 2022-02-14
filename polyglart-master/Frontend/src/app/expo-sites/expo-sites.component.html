@@ -1,12 +1,11 @@
 <!-- Page Title -->
 <div class="hun-section-page-title layout-1 hide-breadcrumbs no-parallax m-b-130">
   <div class="inner-section">
-    <div class="bg-img parallax100"><span class="inner-parallax"
-                                          style="background-image: url(../../assets/images/bg-01.jpg);"></span></div>
+    <div class="bg-img parallax100"><span class="inner-parallax" style="background-image: url(../../assets/images/bg-01.jpg);"></span></div>
 
     <div class="container">
       <h2 class="main-title">
-        Exhibitions
+        exhibition Sites
       </h2>
 
       <ul class="breadcrumbs">
@@ -19,7 +18,7 @@
         </li>
 
         <li>
-          <span> Exhibitions </span>
+          <span> exhibition Sites</span>
         </li>
       </ul>
     </div>
@@ -35,7 +34,7 @@
         <div class="col-lg-9 col-content">
           <div class="content-sec">
             <div class="list-post row">
-              <app-expo-site *ngFor="let expo of expos" [expo]="expo" class="col-md-6 col-xl-4"></app-expo-site>
+                <app-expo-site *ngFor="let expo of expos" [expo] = "expo" class="col-md-6 col-xl-4"></app-expo-site>
             </div>
 
             <div class="loop-pagination text-center">
@@ -60,4 +59,4 @@
   </div>
 </div>
 <!-- end Archive Blog -->
-<app-expo-form [expos]="expos"></app-expo-form>
+<app-expo-form [expos] = "expos"></app-expo-form>

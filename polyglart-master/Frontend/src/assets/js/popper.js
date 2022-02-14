@@ -26,8 +26,7 @@
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
     typeof define === 'function' && define.amd ? define(factory) :
       (global.Popper = factory());
-}(this, (function () {
-  'use strict';
+}(this, (function () { 'use strict';
 
   var nativeHints = ['native code', '[object MutationObserverConstructor]'];
 
@@ -67,7 +66,7 @@
       scheduled = false;
     });
 
-    observer.observe(elem, {attributes: true});
+    observer.observe(elem, { attributes: true });
 
     return function () {
       if (!scheduled) {
@@ -387,6 +386,9 @@
   }();
 
 
+
+
+
   var defineProperty = function (obj, key, value) {
     if (key in obj) {
       Object.defineProperty(obj, key, {
@@ -452,8 +454,7 @@
         rect.left += scrollLeft;
         rect.bottom += scrollTop;
         rect.right += scrollLeft;
-      } catch (err) {
-      }
+      } catch (err) {}
     } else {
       rect = element.getBoundingClientRect();
     }
@@ -582,7 +583,7 @@
    */
   function getBoundaries(popper, reference, padding, boundariesElement) {
     // NOTE: 1 DOM access here
-    var boundaries = {top: 0, left: 0};
+    var boundaries = { top: 0, left: 0 };
     var offsetParent = findCommonOffsetParent(popper, reference);
 
     // Handle viewport case
@@ -736,7 +737,7 @@
    * @returns {String} flipped placement
    */
   function getOppositePlacement(placement) {
-    var hash = {left: 'right', right: 'left', bottom: 'top', top: 'bottom'};
+    var hash = { left: 'right', right: 'left', bottom: 'top', top: 'bottom' };
     return placement.replace(/left|right|bottom|top/g, function (matched) {
       return hash[matched];
     });
@@ -971,7 +972,7 @@
   function attachToScrollParents(scrollParent, event, callback, scrollParents) {
     var isBody = scrollParent.nodeName === 'BODY';
     var target = isBody ? window : scrollParent;
-    target.addEventListener(event, callback, {passive: true});
+    target.addEventListener(event, callback, { passive: true });
 
     if (!isBody) {
       attachToScrollParents(getScrollParent(target.parentNode), event, callback, scrollParents);
@@ -988,7 +989,7 @@
   function setupEventListeners(reference, options, state, updateBound) {
     // Resize event listener on window
     state.updateBound = updateBound;
-    window.addEventListener('resize', state.updateBound, {passive: true});
+    window.addEventListener('resize', state.updateBound, { passive: true });
 
     // Scroll event listener on scroll parents
     var scrollElement = getScrollParent(reference);
@@ -1148,7 +1149,7 @@
 
     // Apply `position` to popper before anything else because
     // without the position applied we can't guarantee correct computations
-    setStyles(popper, {position: 'absolute'});
+    setStyles(popper, { position: 'absolute' });
 
     return options;
   }
@@ -1648,8 +1649,8 @@
       var measurement = (index === 1 ? !useHeight : useHeight) ? 'height' : 'width';
       var mergeWithPrevious = false;
       return op
-        // This aggregates any `+` or `-` sign that aren't considered operators
-        // e.g.: 10 + +5 => [10, +, +5]
+      // This aggregates any `+` or `-` sign that aren't considered operators
+      // e.g.: 10 + +5 => [10, +, +5]
         .reduce(function (a, b) {
           if (a[a.length - 1] === '' && ['+', '-'].indexOf(b) !== -1) {
             a[a.length - 1] = b;
@@ -2256,8 +2257,7 @@
      * Access Popper.js instance with `data.instance`.
      * @prop {onCreate}
      */
-    onCreate: function onCreate() {
-    },
+    onCreate: function onCreate() {},
 
     /**
      * Callback called when the popper is updated, this callback is not called
@@ -2267,8 +2267,7 @@
      * Access Popper.js instance with `data.instance`.
      * @prop {onUpdate}
      */
-    onUpdate: function onUpdate() {
-    },
+    onUpdate: function onUpdate() {},
 
     /**
      * List of modifiers used to modify the offsets before they are applied to the popper.
@@ -2338,7 +2337,7 @@
           name: name
         }, _this.options.modifiers[name]);
       })
-        // sort the modifiers by order
+      // sort the modifiers by order
         .sort(function (a, b) {
           return a.order - b.order;
         });

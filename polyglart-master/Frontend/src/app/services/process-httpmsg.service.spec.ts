@@ -1,6 +1,6 @@
-import {TestBed} from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
-import {ProcessHTTPMsgService} from './process-httpmsg.service';
+import { ProcessHTTPMsgService } from './process-httpmsg.service';
 
 describe('ProcessHTTPMsgService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));

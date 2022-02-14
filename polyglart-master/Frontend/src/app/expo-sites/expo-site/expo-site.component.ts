@@ -1,18 +1,17 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Expo} from '../../shared/expo';
+import { expo } from "../../shared/expo";
 
 @Component({
   selector: 'app-expo-site',
   templateUrl: './expo-site.component.html',
   styleUrls: ['./expo-site.component.css']
 })
-export class ExpoSiteComponent implements OnInit {
+export class expoSiteComponent implements OnInit {
 
   @Input()
-  expo: Expo;
+  expo: expo;
 
-  constructor() {
-  }
+  constructor() { }
 
   ngOnInit() {
   }

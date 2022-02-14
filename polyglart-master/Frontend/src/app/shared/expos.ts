@@ -1,36 +1,36 @@
-import {Expo} from './expo';
+import { expo } from './expo';
 
-export const expos: Expo[] = [
+export const expoS: expo[] = [
   {
-    id: ':',
-    name: 'Hello',
-    desc: 'hello',
-    date: 'hello'
+    id: ":",
+    name: "Hello",
+    desc: "hello",
+    date: "hello"
   },
   {
-    id: '2',
-    name: 'hi',
-    desc: 'hi',
-    date: 'hello'
+    id:"2",
+    name: "hi",
+    desc: "hi",
+    date: "hello"
   },
   {
-    id: '2',
+    id:"2",
 
-    name: 'Hello',
-    desc: 'hello',
-    date: 'hello'
+    name: "Hello",
+    desc: "hello",
+    date: "hello"
   },
   {
-    id: '2',
+    id:"2",
 
-    name: 'Hello',
-    desc: 'hello',
-    date: 'hello'
+    name: "Hello",
+    desc: "hello",
+    date: "hello"
   },
   {
-    id: '2',
-    name: 'Hello',
-    desc: 'hello',
-    date: 'hello'
+    id:"2",
+    name: "Hello",
+    desc: "hello",
+    date: "hello"
   },
 ];
