@@ -1,48 +1,45 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import {Reservation} from "../reservation/Reservation.entity";
-
-
+import { Reservation } from '../reservation/Reservation.entity';
 
 @Entity()
 export class Site {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @PrimaryGeneratedColumn()
-    id: number;
+  @Column()
+  name: string;
 
-    @Column()
+  @Column()
+  description: string;
+
+  @Column()
+  location: {
+    type: Loc;
+    coordinates: number;
+  };
+
+  @Column()
+  email: string;
+
+  @Column()
+  phone: string;
+
+  @Column()
+  owner: {
     name: string;
-
-    @Column()
-    description: string;
-
-    @Column()
-    location: {
-        type: Loc,
-        coordinates: Number,
-    }
-
-    @Column()
     email: string;
+  };
 
-    @Column()
-    phone: string;
+  @Column()
+  unitPrice: number;
 
-    @Column()
-    owner: {
-        name: string,
-        email: string;
-    }
+  @Column()
+  placesAvailable: number;
 
-    @Column()
-    unitPrice: number;
-
-    @Column()
-    placesAvailable: number;
-
-    @Column()
-    @OneToMany(type => Reservation, reservation => reservation.user)
-    reservations: Reservation[];
+  @Column()
+  @OneToMany((type) => Reservation, (reservation) => reservation.user)
+  reservations: Reservation[];
 }
-export enum Loc{
-    Point
+export enum Loc {
+  Point,
 }

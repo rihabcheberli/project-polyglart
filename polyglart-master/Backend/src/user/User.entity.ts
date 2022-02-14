@@ -1,38 +1,38 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import {Reservation} from "../reservation/Reservation.entity";
+import { Reservation } from '../reservation/Reservation.entity';
 
 @Entity()
 export class User {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    name: string;
+  @Column()
+  name: string;
 
-    @Column()
-    email: string;
+  @Column()
+  email: string;
 
-    @Column()
-    password: string;
+  @Column()
+  password: string;
 
-    @Column()
-    phone: string;
+  @Column()
+  phone: string;
 
-    @Column()
-    dateOfBirth: Date;
+  @Column()
+  dateOfBirth: Date;
 
-    @Column()
-    roles: Roles;
+  @Column()
+  roles: Roles;
 
-    @Column({ default: false })
-    isActive: boolean;
+  @Column({ default: false })
+  isActive: boolean;
 
-    @Column()
-    @OneToMany(type => Reservation, reservation => reservation.user)
-    reservations: Reservation[];
+  @Column()
+  @OneToMany((type) => Reservation, (reservation) => reservation.user)
+  reservations: Reservation[];
 }
 export enum Roles {
-    user,
-    host,
-    admin,
+  user,
+  host,
+  admin,
 }
