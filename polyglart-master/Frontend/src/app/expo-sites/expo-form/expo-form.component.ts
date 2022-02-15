@@ -109,7 +109,7 @@ export class expoFormComponent implements OnInit {
 ExhibitionSite.push(
     { id: (ExhibitionSite.length + 1).toString(),
       name: 'B7L9',
-      description: 'Hello',
+      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin et justo et arcu consequat condimentum. Suspendisse et malesuada ipsum. Nullam tristique finibus nibh sit amet maximus. Mauris facilisis odio metus, nec condimentum augue fermentum quis. Nullam commodo urna at nisi elementum, id pulvinar elit fringilla. Mauris ac consequat lorem. Nam in congue velit. Fusce vel interdum nisi. Quisque eu gravida eros, porta vulputate ipsum. Nunc tristique vehicula lacus, ut auctor justo mattis imperdiet.',
       exhibitionDate: '14-09-2022',
     }
 );
