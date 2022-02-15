@@ -4,11 +4,7 @@ import { CreateReservationDto } from './dto/create-reservation.dto';
 @Controller('reservations')
 export class ReservationController {
   @Post()
-  async addReservation(
-    @Body() CreateReservationDto: CreateReservationDto,
-    req,
-    res,
-  ) {
+  async addReservation(@Body() CreateReservationDto: CreateReservationDto) {
     return 'Your reservation was added';
   }
 }

@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 import { User } from '../../user/User.entity';
-import { Site } from '../../sites/Site.entity';
+import { Site } from '../../sites/entities/Site.entity';
 @Entity()
 export class Reservation {
   @PrimaryGeneratedColumn()
