@@ -2,6 +2,8 @@ import {Component, Inject, Input, OnInit} from '@angular/core';
 import { expoS } from '../shared/expos';
 import { expo } from '../shared/expo';
 import {expoService} from '../services/expo.service';
+import {data} from "jquery";
+import {ExhibitionSite} from "../data";
 
 @Component({
   selector: 'app-expo-sites',
@@ -9,20 +11,21 @@ import {expoService} from '../services/expo.service';
   styleUrls: ['./expo-sites.component.css']
 })
 export class expoSitesComponent implements OnInit {
-  public expos: expo[];
+  public expos: any[];
   errMess: string;
 
 
-  constructor(private expoService: expoService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.expoService.getexpos()
-      .subscribe((expos) => this.expos = expos,
-          errmess => this.errMess = errmess as any);
+    // this.expoService.getexpos()
+    //   .subscribe((expos) => this.expos = expos,
+    //       errmess => this.errMess = errmess as any);
+  this.expos = ExhibitionSite;
   }
 
   set exposValue( expo: expo) {
-    this.expos.push(expo);
+    this.expos.push();
   }
 
 }

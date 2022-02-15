@@ -11,7 +11,7 @@ import { Repository } from 'typeorm';
 import { CreateReservationDto } from './dto/create-reservation.dto';
 import { UpdateReservationDto } from './dto/update-reservation.dto';
 import { UserRoleEnum } from '../enums/user-role.enum';
-import { UsersService } from '../user/users.service';
+import { UserService } from '../user/users.service';
 import { EventEmitter2 } from '@nestjs/event-emitter';
 import { Cache } from 'cache-manager';
 
@@ -20,7 +20,7 @@ export class ReservationService {
   constructor(
     @InjectRepository(Reservation)
     private reservationRepository: Repository<Reservation>,
-    private userService: UsersService,
+    private userService: UserService,
     private eventEmitter: EventEmitter2,
     @Inject(CACHE_MANAGER) private cacheManager: Cache,
   ) {}

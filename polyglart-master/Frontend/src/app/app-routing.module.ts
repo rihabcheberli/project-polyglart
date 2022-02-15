@@ -8,6 +8,7 @@ import {ContactComponent} from './contact/contact.component';
 import {expoSitesComponent} from './expo-sites/expo-sites.component';
 import {SignInComponent} from './sign-in/sign-in.component';
 import {AuthGuard} from './services/auth.guard';
+import {ExpoSiteDetailsComponent} from './expo-sites/expo-site-details/expo-site-details.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent },
   { path: 'expos', component: expoSitesComponent },
   { path: 'login', component: SignInComponent },
+  { path: 'expoSite/:id', component: ExpoSiteDetailsComponent},
   { path: '**', component: NotFoundComponent},
 ];
 

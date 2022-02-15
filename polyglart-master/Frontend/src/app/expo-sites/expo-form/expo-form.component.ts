@@ -7,6 +7,7 @@ import {expoService} from '../../services/expo.service';
 import {baseURL} from '../../shared/baseurl';
 import {switchMap} from 'rxjs/internal/operators/switchMap';
 import {expoSitesComponent} from '../expo-sites.component';
+import {ExhibitionSite} from "../../data";
 
 @Component({
   selector: 'app-expo-form',
@@ -105,24 +106,31 @@ export class expoFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.expoIds);
-    this.expo = this.expoForm.value;
-    this.expoCopy = this.expoForm.value;
-    this.expoCopy.id = this.expoIds.length.toString() ;
-    this.expos.push(this.expoCopy);
-    this.expoService.putexpo(this.expoCopy)
-      .subscribe(expo => {
-          console.log(expo);
-          this.expo = expo;
-          this.expoCopy = expo;
-        },
-        errmess => { this.expo = null;  this.errMess = errmess as any; });
-    console.log(this.expo);
-    this.expoForm.reset({
-      name: '',
-      desc: '',
-      date: '',
-    });
+ExhibitionSite.push(
+    { id: (ExhibitionSite.length + 1).toString(),
+      name: 'B7L9',
+      description: 'Hello',
+      exhibitionDate: '14-09-2022',
+    }
+);
+    // console.log(this.expoIds);
+    // this.expo = this.expoForm.value;
+    // this.expoCopy = this.expoForm.value;
+    // this.expoCopy.id = this.expoIds.length.toString() ;
+    // this.expos.push(this.expoCopy);
+    // this.expoService.putexpo(this.expoCopy)
+    //   .subscribe(expo => {
+    //       console.log(expo);
+    //       this.expo = expo;
+    //       this.expoCopy = expo;
+    //     },
+    //     errmess => { this.expo = null;  this.errMess = errmess as any; });
+    // console.log(this.expo);
+    // this.expoForm.reset({
+    //   name: '',
+    //   desc: '',
+    //   date: '',
+    // });
     // this.expoFormDirective.resetForm();
   }
 
