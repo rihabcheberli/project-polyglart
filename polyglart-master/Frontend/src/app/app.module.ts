@@ -21,6 +21,7 @@ import { ContactComponent } from './contact/contact.component';
 import { expoSitesComponent } from './expo-sites/expo-sites.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { expoSiteComponent } from './expo-sites/expo-site/expo-site.component';
+import { ExpoSiteDetailsComponent } from './expo-sites/expo-site-details/expo-site-details.component';
 import {AuthService} from './services/auth.service';
 import {AuthGuard} from './services/auth.guard';
 import { AlertComponent } from './alert/alert.component';
@@ -51,7 +52,8 @@ import {ProcessHTTPMsgService} from './services/process-httpmsg.service';
     SignInComponent,
     expoSiteComponent,
     AlertComponent,
-    expoFormComponent
+    expoFormComponent,
+    ExpoSiteDetailsComponent,
   ],
   imports: [
     BrowserModule,
