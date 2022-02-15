@@ -1,5 +1,4 @@
 import {BadRequestException, Body, Controller, Get, Post, Req, Res, UnauthorizedException} from '@nestjs/common';
-import {AppService} from './app.service';
 import {UserService} from "./user/users.service";
 import * as bcrypt from 'bcrypt';
 import {JwtService} from "@nestjs/jwt";
@@ -22,7 +21,6 @@ export class AppController {
     const hashedPassword = await bcrypt.hash(password, 12);
 
     const user = await this.UserService.create({
-      name,
       email,
       password: hashedPassword
     });
@@ -58,8 +56,8 @@ export class AppController {
   }
 
   @Get('user')
-  async user(@Req() request: Request) {
-  @Body('email') email: string,
+  async user(@Req() request: Request, @Body('email') email: string) {
+
     try {
       const cookie = request.cookies['jwt'];
 
