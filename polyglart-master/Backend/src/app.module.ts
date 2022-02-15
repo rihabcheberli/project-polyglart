@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { SitesController } from './sites/sites.controller';
-import { ReservationsController } from './reservation/reservations.controller';
+import { ReservationsController } from './reservation/reservation.controller';
 import { MongooseModule } from '@nestjs/mongoose';
 
 @Module({

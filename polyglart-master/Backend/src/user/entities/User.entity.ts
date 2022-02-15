@@ -1,5 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
-import { Reservation } from '../reservation/Reservation.entity';
+import { Reservation } from '../../reservation/entities/Reservation.entity';
+import { Exclude } from 'class-transformer';
 
 @Entity()
 export class User {
@@ -30,6 +31,10 @@ export class User {
   @Column()
   @OneToMany((type) => Reservation, (reservation) => reservation.user)
   reservations: Reservation[];
+
+  @Column()
+  @Exclude()
+  salt: string;
 }
 export enum Roles {
   user,

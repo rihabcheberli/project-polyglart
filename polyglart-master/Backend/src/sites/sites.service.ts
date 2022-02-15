@@ -11,7 +11,7 @@ import { Repository } from 'typeorm';
 import { CreateSiteDto } from './dto/create-site.dto';
 import { UpdateSiteDto } from './dto/update-site.dto';
 import { UserRoleEnum } from '../enums/user-role.enum';
-import { UsersService } from '../user/users.service';
+import { UserService } from '../user/users.service';
 import { EventEmitter2 } from '@nestjs/event-emitter';
 import { EVENTS } from '../config/events';
 import { Cache } from 'cache-manager';
@@ -21,7 +21,7 @@ export class SiteService {
   constructor(
     @InjectRepository(Site)
     private siteRepository: Repository<Site>,
-    private userService: UsersService,
+    private userService: UserService,
     private eventEmitter: EventEmitter2,
     @Inject(CACHE_MANAGER) private cacheManager: Cache,
   ) {}
@@ -31,7 +31,7 @@ export class SiteService {
     if (!site) {
       throw new NotFoundException(`${id} n'existe pas`);
     }
-    if (this.usersService.isOwnerOrAdmin(site, user)) {
+    if (this.userService.isOwnerOrAdmin(site, user)) {
       return site;
     } else throw new UnauthorizedException();
   }
