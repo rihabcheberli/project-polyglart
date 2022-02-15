@@ -1,5 +1,5 @@
-import { Loc } from './Site.entity';
-import { Reservation } from '../reservation/Reservation.entity';
+import { Loc } from '../entities/Site.entity';
+import { Reservation } from '../../reservation/Reservation.entity';
 
 export class CreateSiteDto {
   _id: number;

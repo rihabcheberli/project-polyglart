@@ -1,6 +1,6 @@
 import { Body, Controller, Get, Post, Res, HttpStatus } from '@nestjs/common';
 import { Response } from 'express';
-import { CreateSiteDto } from './create-site.dto';
+import { CreateSiteDto } from './dto/create-site.dto';
 
 @Controller('sites')
 export class SitesController {
